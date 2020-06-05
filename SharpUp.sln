@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpUp.Extension", "SharpU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{818EEC89-798F-4E0A-AC8A-553FABA391BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpUp.Oracle", "SharpUp.Oracle\SharpUp.Oracle.csproj", "{DD4B1513-C5BC-4BF9-AE69-847F882FF8BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpUp.Oracle", "SharpUp.Oracle\SharpUp.Oracle.csproj", "{DD4B1513-C5BC-4BF9-AE69-847F882FF8BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,5 +51,16 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD55E80F-6B2B-459A-B225-1B4D82DBC73B}
+	EndGlobalSection
+	GlobalSection(AutomaticVersions) = postSolution
+		UpdateAssemblyVersion = True
+		UpdateAssemblyFileVersion = True
+		UpdateAssemblyInfoVersion = True
+		AssemblyVersionSettings = YearStamp.MMddStamp.IncrementWithResetOnIncrease.NoneWithAutoReset
+		AssemblyFileVersionSettings = YearStamp.MMddStamp.IncrementWithResetOnIncrease.NoneWithAutoReset
+		AssemblyInfoVersionSettings = YearStamp.MMddStamp.IncrementWithResetOnIncrease.NoneWithAutoReset
+		UpdatePackageVersion = False
+		AssemblyInfoVersionType = SettingsVersion
+		InheritWinAppVersionFrom = None
 	EndGlobalSection
 EndGlobal

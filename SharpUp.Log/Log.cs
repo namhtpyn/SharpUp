@@ -8,11 +8,11 @@ namespace SharpUp.Log
 {
     public class Log : IDisposable
     {
-        public event EventHandler<string> OnWrite;
+        public event EventHandler<LogEntry> OnWrite;
 
         public event EventHandler<string> OnError;
 
-        private BlockingCollection<string> _data = new BlockingCollection<string>();
+        private BlockingCollection<LogEntry> _data = new BlockingCollection<LogEntry>();
         private LogType _types = LogType.Info | LogType.Success | LogType.Warning | LogType.Error;
         private CancellationTokenSource _isLogging = new CancellationTokenSource();
         private string _dir = "./logs";
@@ -64,7 +64,7 @@ namespace SharpUp.Log
 
         private void Append(LogType type, object[] args)
         {
-            _data.TryAdd(string.Format("{0:dd-MM-yyyy HH:mm:ss.fff}:[{1}] - {2}", DateTime.Now, type.ToString(), string.Join(",", args)));
+            _data.TryAdd(new LogEntry(type, string.Join(",", args)));
         }
 
         private void Write()
@@ -73,12 +73,12 @@ namespace SharpUp.Log
             {
                 while (true)
                 {
-                    var msg = _data.Take(_isLogging.Token);
+                    var logEntry = _data.Take(_isLogging.Token);
                     try
                     {
                         if (!Directory.Exists(_dir)) Directory.CreateDirectory(_dir);
-                        File.AppendAllText(Path.Combine(_dir, string.Format("{0:yyyy-MM-dd}.txt", DateTime.Now)), msg + Environment.NewLine);
-                        OnWrite?.Invoke(this, msg);
+                        File.AppendAllText(Path.Combine(_dir, string.Format("{0:yyyy-MM-dd}.txt", DateTime.Now)), logEntry.ToString() + Environment.NewLine);
+                        OnWrite?.Invoke(this, logEntry);
                     }
                     catch (Exception ex)
                     {
