@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpUp.Log", "SharpUp.Log\SharpUp.Log.csproj", "{2E4B9C8E-2560-47D6-B128-3E77D4987E52}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpUp.ScheduleJob", "SharpUp.ScheduleJob\SharpUp.ScheduleJob.csproj", "{BF9ED460-7C58-461F-8E07-6452EA462051}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpUp.Snmp", "SharpUp.Snmp\SharpUp.Snmp.csproj", "{049F83FB-C14D-4E23-848C-B8B79DE4DBDD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpUp.Extension", "SharpUp.Extension\SharpUp.Extension.csproj", "{2ED26E57-D09D-4262-AAE5-BB7A15DD5CEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{818EEC89-798F-4E0A-AC8A-553FABA391BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpUp.Oracle", "SharpUp.Oracle\SharpUp.Oracle.csproj", "{DD4B1513-C5BC-4BF9-AE69-847F882FF8BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E4B9C8E-2560-47D6-B128-3E77D4987E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E4B9C8E-2560-47D6-B128-3E77D4987E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E4B9C8E-2560-47D6-B128-3E77D4987E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E4B9C8E-2560-47D6-B128-3E77D4987E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF9ED460-7C58-461F-8E07-6452EA462051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF9ED460-7C58-461F-8E07-6452EA462051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF9ED460-7C58-461F-8E07-6452EA462051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF9ED460-7C58-461F-8E07-6452EA462051}.Release|Any CPU.Build.0 = Release|Any CPU
+		{049F83FB-C14D-4E23-848C-B8B79DE4DBDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{049F83FB-C14D-4E23-848C-B8B79DE4DBDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{049F83FB-C14D-4E23-848C-B8B79DE4DBDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{049F83FB-C14D-4E23-848C-B8B79DE4DBDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ED26E57-D09D-4262-AAE5-BB7A15DD5CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ED26E57-D09D-4262-AAE5-BB7A15DD5CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ED26E57-D09D-4262-AAE5-BB7A15DD5CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ED26E57-D09D-4262-AAE5-BB7A15DD5CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{818EEC89-798F-4E0A-AC8A-553FABA391BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{818EEC89-798F-4E0A-AC8A-553FABA391BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{818EEC89-798F-4E0A-AC8A-553FABA391BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{818EEC89-798F-4E0A-AC8A-553FABA391BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD4B1513-C5BC-4BF9-AE69-847F882FF8BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD4B1513-C5BC-4BF9-AE69-847F882FF8BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD4B1513-C5BC-4BF9-AE69-847F882FF8BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD4B1513-C5BC-4BF9-AE69-847F882FF8BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD55E80F-6B2B-459A-B225-1B4D82DBC73B}
+	EndGlobalSection
+EndGlobal
