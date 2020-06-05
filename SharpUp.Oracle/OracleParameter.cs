@@ -33,7 +33,7 @@ namespace SharpUp.Oracle
                     return;
                 }
 
-                if (value.GetType().IsArray)
+                if (value != null && value.GetType().IsArray)
                 {
                     CollectionType = OracleCollectionType.PLSQLAssociativeArray;
                     DbType = value.GetType().GetElementType().ToOracleDbType();

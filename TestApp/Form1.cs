@@ -20,12 +20,12 @@ namespace TestApp
             job.Add(DoLog, DateTime.Now, TimeSpan.FromSeconds(1));
         }
 
-        private void Log_OnWrite(object sender, string e)
+        private void Log_OnWrite(object sender, LogEntry e)
         {
             richTextBox1.SuspendLayout();
             richTextBox1.Invoke((MethodInvoker)(() =>
             {
-                richTextBox1.AppendText(e + Environment.NewLine);
+                richTextBox1.AppendText(e.ToString() + Environment.NewLine);
             }));
             richTextBox1.ResumeLayout();
         }
@@ -34,7 +34,7 @@ namespace TestApp
         {
             OracleConnection connection = new OracleConnection("Data Source = (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.157.6.5)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xNetDB.vnpt.vn))); User Id=xNet; Password=Mznxbc951; Max Pool Size=300");
             connection.Open();
-            var x = connection.CreateProcCommand("XNET.TEST_API.TEST_PRC", new object[] { 0, 1 }.Append(OracleDbType.RefCursor).ToArray()).ExecuteList();
+            var x = connection.CreateProcCommand("XNET.TEST_API.TEST_PRC", null, 1, OracleDbType.RefCursor).ExecuteList();
             //var cmd = connection.CreateProcCommand("XNET.TEST_API.TEST_PRC");
             //cmd.Parameters.Add(new OracleParameter(1));
             //var y = cmd.ExecuteList();
