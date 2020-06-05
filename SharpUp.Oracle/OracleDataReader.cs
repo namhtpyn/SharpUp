@@ -72,11 +72,14 @@ namespace SharpUp.Oracle
                     try
                     {
                         var fieldValue = _reader.GetValue(index);
-                        if (fieldValue == DBNull.Value) propInfo.SetValue(newObject, default);
+                        if (fieldValue == DBNull.Value) propInfo.SetValue(newObject, null);
                         else if (propInfo.PropertyType.IsEnum)
                             propInfo.SetValue(newObject, Enum.Parse(propInfo.PropertyType, fieldValue.ToString()));
                         else
-                            propInfo.SetValue(newObject, Convert.ChangeType(fieldValue, propInfo.PropertyType));
+                        {
+                            Type type = Nullable.GetUnderlyingType(propInfo.PropertyType) ?? propInfo.PropertyType;
+                            propInfo.SetValue(newObject, Convert.ChangeType(fieldValue, type));
+                        }
                     }
                     catch
                     {
