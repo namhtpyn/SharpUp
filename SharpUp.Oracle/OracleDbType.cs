@@ -47,6 +47,10 @@ namespace SharpUp.Oracle
             else if (type == typeof(Int32)) return OracleDbType.Int32;
             else if (type == typeof(Int16)) return OracleDbType.Int16;
             else if (type == typeof(long)) return OracleDbType.Long;
+            else if (type == typeof(ulong)) return OracleDbType.Long;
+            else if (type == typeof(UInt16)) return OracleDbType.Int32;
+            else if (type == typeof(UInt32)) return OracleDbType.Int64;
+            else if (type == typeof(UInt64)) return OracleDbType.Long;
             else if (type == typeof(sbyte)) return OracleDbType.Byte;
             else if (type == typeof(byte)) return OracleDbType.Int16;
             else if (type == typeof(decimal)) return OracleDbType.Decimal;

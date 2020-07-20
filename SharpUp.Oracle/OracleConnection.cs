@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SharpUp.Oracle
 {
-    public class OracleConnection
+    public class OracleConnection : IDisposable
     {
         internal global::Oracle.ManagedDataAccess.Client.OracleConnection _connection;
 
@@ -73,5 +73,18 @@ namespace SharpUp.Oracle
         }
 
         public Task<OracleCommand> CreateProcCommandAsync(string storedProcedure, params object[] variables) => Task.Run(() => CreateProcCommand(storedProcedure, variables));
+
+        public OracleTransaction BeginTransaction() => new OracleTransaction(_connection.BeginTransaction());
+        public Task<OracleTransaction> BeginTransactionAsync(CancellationToken token = default) => Task.Run(BeginTransaction, token);
+        public OracleTransaction BeginTransaction(IsolationLevel level) => new OracleTransaction(_connection.BeginTransaction(level));
+        
+
+        public Task<OracleTransaction> BeginTransactionAsync(IsolationLevel level, CancellationToken token = default)=>Task.Run(() => BeginTransaction(level), token);
+
+
+        public void Dispose()
+        {
+            _connection.Dispose();
+        }
     }
 }
