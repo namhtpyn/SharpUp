@@ -5,9 +5,9 @@
     <Authors>Nam Hoang</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2020.605.0</Version>
-    <AssemblyVersion>2020.0605.1.0</AssemblyVersion>
-    <FileVersion>2020.0605.1.0</FileVersion>
+    <Version>2020.906.0</Version>
+    <AssemblyVersion>2020.0906.1.0</AssemblyVersion>
+    <FileVersion>2020.0906.1.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

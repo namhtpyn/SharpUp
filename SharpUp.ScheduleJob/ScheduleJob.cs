@@ -31,19 +31,19 @@ namespace SharpUp.ScheduleJob
 
         public void RemoveAt(int index)
         {
-            _data[index].Dispose();
+            _data[index].Change(Timeout.Infinite, Timeout.Infinite);
             _data.RemoveAt(index);
         }
 
         public void Clear()
         {
-            _data.ForEach(a => a.Dispose());
+            _data.ForEach(a => a.Change(Timeout.Infinite, Timeout.Infinite));
             _data.Clear();
         }
 
         public void Dispose()
         {
-            _data.ForEach(a => a.Dispose());
+            this.Clear();
             _data = null;
         }
     }
