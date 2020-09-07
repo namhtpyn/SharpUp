@@ -43,7 +43,7 @@ namespace SharpUp.ScheduleJob
 
         public void Dispose()
         {
-            this.Clear();
+            _data.ForEach(a => a.Change(Timeout.Infinite, Timeout.Infinite));
             _data = null;
         }
     }

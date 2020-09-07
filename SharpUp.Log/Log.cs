@@ -13,7 +13,7 @@ namespace SharpUp.Log
         public event EventHandler<string> OnError;
 
         private BlockingCollection<LogEntry> _data = new BlockingCollection<LogEntry>();
-        private LogType _types = LogType.Info | LogType.Success | LogType.Warning | LogType.Error;
+        private LogType _types = LogType.Info | LogType.Debug | LogType.Success | LogType.Warning | LogType.Error;
         private CancellationTokenSource _isLogging = new CancellationTokenSource();
         private string _dir = "./logs";
 
@@ -34,7 +34,7 @@ namespace SharpUp.Log
 
         public Log()
         {
-            _ = Task.Run(Write);
+            _ = Task.Run(WriteFile);
         }
 
         ~Log()
@@ -45,6 +45,11 @@ namespace SharpUp.Log
         public void Info(params object[] args)
         {
             if (_types.HasFlag(LogType.Info)) Append(LogType.Info, args);
+        }
+
+        public void Debug(params object[] args)
+        {
+            if (_types.HasFlag(LogType.Debug)) Append(LogType.Debug, args);
         }
 
         public void Success(params object[] args)
@@ -67,7 +72,7 @@ namespace SharpUp.Log
             _data.TryAdd(new LogEntry(type, string.Join(",", args)));
         }
 
-        private void Write()
+        private void WriteFile()
         {
             try
             {
@@ -85,6 +90,9 @@ namespace SharpUp.Log
                         OnError?.Invoke(this, ex.Message);
                     }
                 }
+            }
+            catch (OperationCanceledException ex)
+            {
             }
             catch (Exception ex)
             {

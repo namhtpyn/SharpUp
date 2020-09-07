@@ -19,11 +19,11 @@ namespace SharpUp.Oracle
 
         public void Open() => _connection.Open();
 
-        public Task OpenAsync() => Task.Run(Open);
+        public Task OpenAsync(CancellationToken token = default) => Task.Run(Open, token);
 
         public void Close() => _connection.Close();
 
-        public Task CloseAsync() => Task.Run(Close);
+        public Task CloseAsync(CancellationToken token = default) => Task.Run(Close, token);
 
         public OracleCommand CreateCommand() => new OracleCommand(this);
 
@@ -75,12 +75,12 @@ namespace SharpUp.Oracle
         public Task<OracleCommand> CreateProcCommandAsync(string storedProcedure, params object[] variables) => Task.Run(() => CreateProcCommand(storedProcedure, variables));
 
         public OracleTransaction BeginTransaction() => new OracleTransaction(_connection.BeginTransaction());
+
         public Task<OracleTransaction> BeginTransactionAsync(CancellationToken token = default) => Task.Run(BeginTransaction, token);
+
         public OracleTransaction BeginTransaction(IsolationLevel level) => new OracleTransaction(_connection.BeginTransaction(level));
-        
 
-        public Task<OracleTransaction> BeginTransactionAsync(IsolationLevel level, CancellationToken token = default)=>Task.Run(() => BeginTransaction(level), token);
-
+        public Task<OracleTransaction> BeginTransactionAsync(IsolationLevel level, CancellationToken token = default) => Task.Run(() => BeginTransaction(level), token);
 
         public void Dispose()
         {
