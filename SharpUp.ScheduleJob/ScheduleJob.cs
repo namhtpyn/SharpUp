@@ -7,6 +7,7 @@ namespace SharpUp.ScheduleJob
     public class ScheduleJob : IDisposable
     {
         private List<Timer> _data = new List<Timer>();
+        public int Count => _data.Count;
 
         public ScheduleJob()
         {
@@ -27,6 +28,11 @@ namespace SharpUp.ScheduleJob
         public int Add(Action<object> action, DateTime startTime)
         {
             return Add(action, startTime, Timeout.InfiniteTimeSpan);
+        }
+
+        public Timer Get(int index)
+        {
+            return _data[index];
         }
 
         public void RemoveAt(int index)

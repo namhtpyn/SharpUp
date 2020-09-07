@@ -42,6 +42,11 @@ namespace SharpUp.Log
             Dispose();
         }
 
+        public void SetType(LogType types)
+        {
+            _types = types;
+        }
+
         public void Info(params object[] args)
         {
             if (_types.HasFlag(LogType.Info)) Append(LogType.Info, args);

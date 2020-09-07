@@ -17,6 +17,28 @@ namespace SharpUp.Oracle
             _connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection(connectionString);
         }
 
+        public int ConnectionTimeout => _connection.ConnectionTimeout;
+
+        public int KeepAliveTime
+        {
+            get => _connection.KeepAliveTime;
+            set => _connection.KeepAliveTime = value;
+        }
+
+        public bool KeepAlive
+        {
+            get => _connection.KeepAlive;
+            set => _connection.KeepAlive = value;
+        }
+
+        public int KeepAliveInterval
+        {
+            get => _connection.KeepAliveInterval;
+            set => _connection.KeepAliveInterval = value;
+        }
+
+        public ConnectionState State => _connection.State;
+
         public void Open() => _connection.Open();
 
         public Task OpenAsync(CancellationToken token = default) => Task.Run(Open, token);
