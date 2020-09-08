@@ -4,9 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <AssemblyVersion>2020.0428.2.0</AssemblyVersion>
-    <FileVersion>2020.0428.2.0</FileVersion>
-    <Version>2020.428.1</Version>
+    <AssemblyVersion>2020.0908.2.0</AssemblyVersion>
+    <FileVersion>2020.0908.2.0</FileVersion>
+    <Version>2020.908.1</Version>
     <Authors>Nam Hoang</Authors>
   </PropertyGroup>
 
