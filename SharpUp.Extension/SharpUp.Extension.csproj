@@ -4,9 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <AssemblyVersion>2020.0908.2.0</AssemblyVersion>
-    <FileVersion>2020.0908.2.0</FileVersion>
-    <Version>2020.908.1</Version>
+    <AssemblyVersion>2020.0909.0.0</AssemblyVersion>
+    <FileVersion>2020.0909.0.0</FileVersion>
+    <Version>2020.908.2</Version>
     <Authors>Nam Hoang</Authors>
   </PropertyGroup>
 
@@ -28,5 +28,9 @@
     <Compile Remove="IDataReaderExtension.cs" />
     <Compile Remove="IDbCommandExtension.cs" />
     <Compile Remove="IDbConnectionExtension.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
   </ItemGroup>
 </Project>

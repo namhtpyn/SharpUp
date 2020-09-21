@@ -20,6 +20,7 @@ namespace SharpUp.ScheduleJob
 
         public int Add(Action<object> action, DateTime startTime, TimeSpan interval)
         {
+            while (startTime < DateTime.Now && interval != Timeout.InfiniteTimeSpan) startTime = startTime.Add(interval);
             var dueTime = TimeSpan.FromMilliseconds(Math.Max(0, (startTime - DateTime.Now).TotalMilliseconds));
             _data.Add(new Timer(new TimerCallback(action), null, dueTime, interval));
             return _data.Count;

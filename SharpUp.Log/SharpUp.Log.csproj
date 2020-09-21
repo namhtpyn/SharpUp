@@ -7,9 +7,9 @@
     <Company />
     <Product />
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>2020.907.7</Version>
-    <AssemblyVersion>2020.0907.8.0</AssemblyVersion>
-    <FileVersion>2020.0907.8.0</FileVersion>
+    <Version>2020.909.0</Version>
+    <AssemblyVersion>2020.0909.1.0</AssemblyVersion>
+    <FileVersion>2020.0909.1.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
