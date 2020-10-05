@@ -1,36 +1,32 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <AssemblyVersion>2020.0909.0.0</AssemblyVersion>
-    <FileVersion>2020.0909.0.0</FileVersion>
-    <Version>2020.908.2</Version>
-    <Authors>Nam Hoang</Authors>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<AssemblyVersion>2020.0923.4.0</AssemblyVersion>
+		<FileVersion>2020.0923.4.0</FileVersion>
+		<Version>2020.923.3</Version>
+		<Authors>Nam Hoang</Authors>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <ShouldCreateLogs>True</ShouldCreateLogs>
-    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
-    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
-    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
-    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
-    <UpdatePackageVersion>True</UpdatePackageVersion>
-    <PackageVersionSettings>AssemblyVersion.IncrementWithAutoReset.None</PackageVersionSettings>
-    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
-    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<ShouldCreateLogs>True</ShouldCreateLogs>
+		<AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+		<UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+		<UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+		<UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+		<UpdatePackageVersion>True</UpdatePackageVersion>
+		<PackageVersionSettings>AssemblyVersion.IncrementWithAutoReset.None</PackageVersionSettings>
+		<AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+		<InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="ConcurrentQueueExtension.cs" />
-    <Compile Remove="DataTableExtension.cs" />
-    <Compile Remove="IDataReaderExtension.cs" />
-    <Compile Remove="IDbCommandExtension.cs" />
-    <Compile Remove="IDbConnectionExtension.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="ConcurrentQueueExtension.cs" />
+		<Compile Remove="DataTableExtension.cs" />
+		<Compile Remove="IDataReaderExtension.cs" />
+		<Compile Remove="IDbCommandExtension.cs" />
+		<Compile Remove="IDbConnectionExtension.cs" />
+	</ItemGroup>
 </Project>

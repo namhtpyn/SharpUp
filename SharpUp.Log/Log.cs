@@ -47,6 +47,11 @@ namespace SharpUp.Log
             _types = types;
         }
 
+        public void SetDir(string dir)
+        {
+            _dir = dir;
+        }
+
         public void Info(params object[] args)
         {
             if (_types.HasFlag(LogType.Info)) Append(LogType.Info, args);
@@ -96,7 +101,7 @@ namespace SharpUp.Log
                     }
                 }
             }
-            catch (OperationCanceledException ex)
+            catch (OperationCanceledException)
             {
             }
             catch (Exception ex)

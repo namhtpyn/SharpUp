@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpUp.Oracle", "SharpUp.Oracle\SharpUp.Oracle.csproj", "{DD4B1513-C5BC-4BF9-AE69-847F882FF8BD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpUp.AutoStart", "SharpUp.AutoStart\SharpUp.AutoStart.csproj", "{03054A1B-9FE0-4091-8699-7ADA4330AE27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpUp.Parallel", "SharpUp.Parallel\SharpUp.Parallel.csproj", "{2BC95038-6855-43C2-AC69-54EC2B66DEFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{DD4B1513-C5BC-4BF9-AE69-847F882FF8BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD4B1513-C5BC-4BF9-AE69-847F882FF8BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD4B1513-C5BC-4BF9-AE69-847F882FF8BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03054A1B-9FE0-4091-8699-7ADA4330AE27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03054A1B-9FE0-4091-8699-7ADA4330AE27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03054A1B-9FE0-4091-8699-7ADA4330AE27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03054A1B-9FE0-4091-8699-7ADA4330AE27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BC95038-6855-43C2-AC69-54EC2B66DEFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC95038-6855-43C2-AC69-54EC2B66DEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC95038-6855-43C2-AC69-54EC2B66DEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC95038-6855-43C2-AC69-54EC2B66DEFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,9 +68,9 @@ Global
 		UpdateAssemblyVersion = True
 		UpdateAssemblyFileVersion = True
 		UpdateAssemblyInfoVersion = True
-		AssemblyVersionSettings = YearStamp.MMddStamp.IncrementWithResetOnIncrease.NoneWithAutoReset
-		AssemblyFileVersionSettings = YearStamp.MMddStamp.IncrementWithResetOnIncrease.NoneWithAutoReset
-		AssemblyInfoVersionSettings = YearStamp.MMddStamp.IncrementWithResetOnIncrease.NoneWithAutoReset
+		AssemblyVersionSettings = YearStamp.MMddStamp.IncrementWithResetOnIncrease.None
+		AssemblyFileVersionSettings = YearStamp.MMddStamp.IncrementWithResetOnIncrease.None
+		AssemblyInfoVersionSettings = YearStamp.MMddStamp.IncrementWithResetOnIncrease.None
 		UpdatePackageVersion = False
 		AssemblyInfoVersionType = SettingsVersion
 		InheritWinAppVersionFrom = None

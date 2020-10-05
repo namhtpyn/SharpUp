@@ -85,6 +85,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SharpUp.Extension\SharpUp.Extension.csproj">
+      <Project>{2ed26e57-d09d-4262-aae5-bb7a15dd5cea}</Project>
+      <Name>SharpUp.Extension</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SharpUp.Log\SharpUp.Log.csproj">
       <Project>{2e4b9c8e-2560-47d6-b128-3e77d4987e52}</Project>
       <Name>SharpUp.Log</Name>

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace SharpUp.ScheduleJob
 {
-    public class ScheduleJob : IDisposable
+    public class ScheduleJob
     {
-        private List<Timer> _data = new List<Timer>();
+        private List<JobTimer> _data = new List<JobTimer>();
         public int Count => _data.Count;
 
         public ScheduleJob()
@@ -15,43 +16,47 @@ namespace SharpUp.ScheduleJob
 
         ~ScheduleJob()
         {
-            Dispose();
+            this.Clear();
+            _data = null;
         }
 
-        public int Add(Action<object> action, DateTime startTime, TimeSpan interval)
+        public int Add(Action action, DateTime startTime, TimeSpan interval, bool overlap = true)
         {
-            while (startTime < DateTime.Now && interval != Timeout.InfiniteTimeSpan) startTime = startTime.Add(interval);
-            var dueTime = TimeSpan.FromMilliseconds(Math.Max(0, (startTime - DateTime.Now).TotalMilliseconds));
-            _data.Add(new Timer(new TimerCallback(action), null, dueTime, interval));
+            _data.Add(new JobTimer(action, startTime, interval, overlap));
             return _data.Count;
         }
 
-        public int Add(Action<object> action, DateTime startTime)
+        public int Add(Action action, DateTime startTime)
         {
-            return Add(action, startTime, Timeout.InfiniteTimeSpan);
+            return Add(action, startTime, Timeout.InfiniteTimeSpan, false);
         }
 
-        public Timer Get(int index)
+        public int Add(Func<Task> action, DateTime startTime, TimeSpan interval, bool overlap = true)
+        {
+            _data.Add(new JobTimer(action, startTime, interval, overlap));
+            return _data.Count;
+        }
+
+        public int Add(Func<Task> action, DateTime startTime)
+        {
+            return Add(action, startTime, Timeout.InfiniteTimeSpan, false);
+        }
+
+        public JobTimer Get(int index)
         {
             return _data[index];
         }
 
         public void RemoveAt(int index)
         {
-            _data[index].Change(Timeout.Infinite, Timeout.Infinite);
+            _data[index].Dispose();
             _data.RemoveAt(index);
         }
 
         public void Clear()
         {
-            _data.ForEach(a => a.Change(Timeout.Infinite, Timeout.Infinite));
+            _data.ForEach(a => a.Dispose());
             _data.Clear();
-        }
-
-        public void Dispose()
-        {
-            _data.ForEach(a => a.Change(Timeout.Infinite, Timeout.Infinite));
-            _data = null;
         }
     }
 }
